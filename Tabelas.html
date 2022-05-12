@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Tabelas</title>
+  <link rel="stylesheet" href="style_tabelas.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Tabela de Clientes</h1>
+  </header>
+  <main>
+    <section>
+
+      <form align="center" name="myForm">
+        <div class="Matricula" style="display: inline-block;">
+          <label for="Matricula">Matricula:</label><br>
+          <input type="text" id="inputMatricula" placeholder="Digite aqui a matrícula...">
+        </div>
+
+        <div id="Nome" style="display: inline-block;">
+          <label for="Nome">Nome:</label><br>
+          <input type="text" id="inputnome" placeholder="Digite aqui o nome...">
+        </div>
+
+        <div id="Idade" style="display: inline-block;">
+          <label for="Idade">Idade:</label><br>
+          <input type="text" id="inputidade" placeholder="Digite aqui a idade...">
+        </div>
+
+        <div id="Cidade" style="display: inline-block;">
+          <label for="Cidade">Cidade:</label><br>
+          <input type="text" id="inputcidade" placeholder="Digite aqui a cidade...">
+        </div>
+
+        <div id="Banco" style="display: inline-block;">
+          <label for="Banco">Banco</label><br>
+          <input type="text" id="inputbanco" placeholder="Digite aqui a cidade...">
+        </div>
+
+        <div id="Poupanca" style="display: inline-block;">
+          <label for="Poupanca">Poupanca</label><br>
+          <input type="text" id="inputpoupanca" placeholder="Digite aqui o valor da poupança...">
+        </div>
+
+        <span class="addBtn" id="add_button" onclick="adicionaCliente()">Add</span>
+
+      </form>
+    </section>
+    <section>
+
+      <table align="center" id="table1">
+        <tr>
+          <th id="matricula1">Matricula</th>
+          <th id="nome">Nome</th>
+          <th id="idade">Idade</th>
+          <th id="cidade">Cidade</th>
+          <th id="banco">Banco</th>
+          <th id="poupanca">Poupança</th>
+        </tr>
+      </table>
+      <h2 align="center">Tabela Clientes empréstimos</h2>
+      <h3 align="center">Todos com poupança abaixo de R$ 100,00</h3>
+      <table align="center" name="table2">
+        <tr>
+          <th>Mat.</th>
+          <th>Nome</th>
+          <th>Idade</th>
+          <th>Cidade</th>
+          <th>Banco</th>
+          <th>Poupança</th>
+        </tr>
+        <tr>
+          <td>215556</td>
+          <td>Alvamar</td>
+          <td>35</td>
+          <td>Cacimba de Dentro</td>
+          <td>Banco Real</td>
+          <td>R$ 51,00</td>
+        </tr>
+        <tr>
+          <td>152333</td>
+          <td>Joesley</td>
+          <td>54</td>
+          <td>Juazeirense</td>
+          <td>Banco Contorno</td>
+          <td>R$ 25,25</td>
+        </tr>
+        <tr>
+          <td>998639</td>
+          <td>Isonara</td>
+          <td>28</td>
+          <td>Pequenopólis</td>
+          <td>Banco Real</td>
+          <td>R$ 34,05</td>
+        </tr>
+        <tr>
+          <td>111123</td>
+          <td>Sarimar</td>
+          <td>37</td>
+          <td>Jardins de Tubarões</td>
+          <td>Banco Lisos</td>
+          <td>R$ 80,45</td>
+        </tr>
+        <tr>
+          <td>873244</td>
+          <td>Etevilma</td>
+          <td>57</td>
+          <td>Pequenopólis</td>
+          <td>Banco Real</td>
+          <td>R$ 24,00</td>
+        </tr>
+        <tr>
+          <td>252668</td>
+          <td>Giselimia</td>
+          <td>45</td>
+          <td>Austimirim</td>
+          <td>Banco do Sol</td>
+          <td>R$ 14,25</td>
+        </tr>
+        <tr>
+          <td>777755</td>
+          <td>Junira</td>
+          <td>53</td>
+          <td>Cacimba de Dentro</td>
+          <td>Banco Real</td>
+          <td>R$ 15,75</td>
+        </tr>
+        <tr>
+          <td>333697</td>
+          <td>Sylamia</td>
+          <td>40</td>
+          <td>Demacia</td>
+          <td>Banco Magia</td>
+          <td>R$ 12,50</td>
+        </tr>
+      </table>
+    </section>
+  </main>
+
+  <script src="tab.js"></script>
+</body>
+
+</html>
