@@ -1,61 +1,13 @@
 body{
-    background: linear-gradient(90deg, rgba(131,58,180,1) 1%,
-                                      rgba(253,29,29,1) 50%,
-                                      rgba(252,176,69,1) 100%);
-}
-h1,h2 {
-   text-align: center;
-   
-}
-input{
-  width: 40%;
-  margin-right: 0;
-  padding: 8px;
-  border: 5px;
-  border-color: black;
-  font-size: 14px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-align: left;
+    background-color: darkslategray !important;
 }
 
-table{
-    border: 2px solid black;
+h1, h2, h3 {
+    color: white;
+}
+
+form{
+    background-color: aliceblue;
+    padding: 1em;
     border-radius: 10px;
-    text-align: center;
-    align-content: center;
 }
-th, td{
-    border: 2px solid black;
-    border-radius: 10px;
-    letter-spacing: 1px;
-    text-align: center;
-    background-color: #96D4D4;
-}
-
-tr {
-    border: 2px solid black;
-    border-radius: 10px;
-    letter-spacing: 1px;
-    text-align: center;
-    background-color: #96D4D4;
-}
-
-.addBtn{
-    width: 25%;
-    padding: 10px;
-    margin-left:0;
-    background: #d9d9d9;
-    color: #555;
-    text-align: center;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-}
-
-.addBtn:hover {
-    background-color: #bbb;
-    color: #FFF;
-}
-

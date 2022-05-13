@@ -1,44 +1,39 @@
 
-function adicionaCliente(){
 
-    let matricula = document.getElementById(`inputMatricula`).value
-    let nome = document.getElementById(`inputnome`).value
-    let idade = document.getElementById(`inputidade`).value
-    let cidade = document.getElementById(`inputcidade`).value
-    let banco = document.getElementById(`inputbanco`).value
-    let poupanca = document.getElementById(`inputpoupanca`).value
+function adicionaCliente(e){
+    e.preventDefault();
+    let toadd = {
+        matricula:  document.getElementById(`inputMatricula`).value,
+        nome: document.getElementById(`inputnome`).value,
+        idade: document.getElementById(`inputidade`).value,
+        cidade: document.getElementById(`inputcidade`).value,
+        banco: document.getElementById(`inputbanco`).value,
+        poupanca: document.getElementById(`inputpoupanca`).value
+    }
 
+    let vazio = false;
 
-    if(matricula == '' || nome == '' || idade == '' || cidade == ''){
-        alert("Preencher campo vazio")
-    }else{
-        let elemento = document.createElement("tr")
-        let elemento2 = document.createElement("tr")
-        let elemento3 = document.createElement("tr")
-        let elemento4 = document.createElement("tr")
-        let elemento5 = document.createElement("tr")
-        let elemento6 = document.createElement("tr")
+    for (i in toadd){
+        if(toadd[i] === ''){
+          alert("Preencher "+i+".");
+          vazio = true;
+          break;
+        }
+    }
 
-        elemento.innerHTML = matricula
-        elemento2.innerHTML = nome 
-        elemento3.innerHTML = idade
-        elemento4.innerHTML = cidade
-        elemento5.innerHTML = banco
-        elemento6.innerHTML = poupanca
+    if(!vazio){
 
-        document.getElementById(`matricula1`).appendChild(elemento);
-        matricula.value = ''
-        document.getElementById(`nome`).appendChild(elemento2);
-        nome.value = ''
-        document.getElementById(`idade`).appendChild(elemento3);
-        idade.value = ''
-        document.getElementById(`cidade`).appendChild(elemento4);
-        cidade.value = ''
-        document.getElementById(`banco`).appendChild(elemento5);
-        banco.value = ''
-        document.getElementById(`poupanca`).appendChild(elemento6);
-        poupanca.value = ''
+        let tr = document.createElement("tr")
+        for(i in toadd){
+            let td = document.createElement('td');
+            td.innerHTML = toadd[i];
+            tr.appendChild(td);
+        }
+        
+        $('table:first tbody').append(tr);
 
+        if(toadd.poupanca<100)
+            $('table:eq(1) tbody').append($(tr).clone());
     }
  
 }
