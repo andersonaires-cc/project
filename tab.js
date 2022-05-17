@@ -2,30 +2,45 @@ function adicionaCliente(e) {
   e.preventDefault();
 
   let toadd = {
-    matricula: document.getElementById(`inputMatricula`).value,
-    nome: document.getElementById(`inputnome`).value,
-    idade: document.getElementById(`inputidade`).value,
-    cidade: document.getElementById(`inputcidade`).value,
-    banco: document.getElementById(`inputbanco`).value,
-    poupanca: document.getElementById(`inputpoupanca`).value,
+    
+    matricula: document.getElementById(`inputMatricula`),
+    nome: document.getElementById(`inputnome`),
+    idade: document.getElementById(`inputidade`),
+    cidade: document.getElementById(`inputcidade`),
+    banco: document.getElementById(`inputbanco`),
+    poupanca: document.getElementById(`inputpoupanca`),
   };
+  
 
   if ( hasEmptyAttributes(toadd) === true ) return;
 
-  let tr = createTRsForItem(item);
+  let tr = createTRsForItem(toadd);
 
   $("table:first tbody").append(tr);
 
   if ( toadd.poupanca < 100 ) $("table:eq(1) tbody").append( $(tr).clone() );
+  // nova função
+  clearattributes(toadd);
 }
+
+// Nesta função estava retornando false (linha 30) quando o valor era nulo e isso causava erro no código
 
 function hasEmptyAttributes(item) {
   for (i in item)
-    if (item[i] === "") {
+    if (item[i].value === "") {
       alert("Preencher " + i + ".");
-      return false;
+      return true;
     }
-  return true;
+  return false;
+}
+
+// Nova função clear para eliminar os campos do formulário
+// atribuindo o valor nulo aos itens após a inserção para limpar os campos
+
+function clearattributes(item) {
+  for (i in item){
+    item[i].value = ""
+  }
 }
 
 function createTRsForItem(item) {
@@ -33,7 +48,7 @@ function createTRsForItem(item) {
   
   for (i in item) {
     let td = document.createElement("td");
-    td.innerHTML = item[i];
+    td.innerHTML = item[i].value;
     tr.appendChild(td);
   }
 
