@@ -18,7 +18,7 @@ function adicionaCliente(e) {
 
   $("table:first tbody").append(tr);
 
-  if ( toadd.poupanca < 100 ) $("table:eq(1) tbody").append( $(tr).clone() );
+  if ( toadd.poupanca.value < 100 ) $("table:eq(1) tbody").append( $(tr).clone() );
   // nova função
   clearattributes(toadd);
 }
